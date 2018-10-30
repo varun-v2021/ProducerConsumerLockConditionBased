@@ -9,12 +9,13 @@ public class MainClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		List<Integer> sharedQueue = new LinkedList<Integer>(); // Creating shared object
+		//Shared Object
+		List<Integer> sharedQueue = new LinkedList<Integer>(); 
 
 		Lock lock = new ReentrantLock();
-		// producerCondition
+		
 		Condition producerCondition = lock.newCondition();
-		// consumerCondition
+
 		Condition consumerCondition = lock.newCondition();
 
 		Producer producer = new Producer(sharedQueue, lock, producerCondition, consumerCondition);
